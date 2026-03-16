@@ -10,7 +10,15 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int currentIndex = 0;
+  int selectedIndex = 0;
+
+  List<String>  backgroundImageList = [
+    "assets/images/home_background.png",
+    "assets/images/hadeth_background.png",
+    "assets/images/sebha_background.png",
+    "assets/images/radio_background.png",
+    "assets/images/time_background.png",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
           fit: BoxFit.cover,
           width: double.infinity,
           height: double.infinity,
-          'assets/images/home_background.png',
+          backgroundImageList[selectedIndex],
         ),
         Scaffold(
           bottomNavigationBar: Theme(
@@ -28,11 +36,11 @@ class _HomeScreenState extends State<HomeScreen> {
               canvasColor: AppColor.primaryColor,
             ),
             child: BottomNavigationBar(
-              currentIndex: currentIndex,
+              currentIndex: selectedIndex,
               onTap: (index){
-               if( currentIndex != index){
+               if( selectedIndex != index){
                  setState(() {
-                   currentIndex = index;
+                   selectedIndex = index;
                  });
                }
               },
@@ -73,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   BottomNavigationBarItem customBottomNavigationBarItem({required String image, required String label, required int index}) {
     return BottomNavigationBarItem(
-                icon: currentIndex == index ? Container(
+                icon: selectedIndex == index ? Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 20,
                     vertical: 6,
