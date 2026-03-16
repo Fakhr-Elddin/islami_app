@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/home/home_screen.dart';
+import 'package:islami_app/my_theme_data.dart';
 import 'package:islami_app/screens/onboarding_screen.dart';
 
 void main(){
@@ -13,6 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.dark,
+      darkTheme: MyThemeData.darkTheme,
       routes: {
         OnboardingScreen.routeName : (context) => const OnboardingScreen(),
         HomeScreen.routeName : (context) => const HomeScreen(),

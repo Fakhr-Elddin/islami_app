@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/app_color.dart';
 
 class CustomTextButton extends StatelessWidget {
   const CustomTextButton({
@@ -21,7 +22,7 @@ class CustomTextButton extends StatelessWidget {
           fontSize: 16,
           fontWeight: FontWeight.bold,
           fontFamily: 'Janna LT',
-          color: Color(0xffE2BE7F),
+          color: AppColor.primaryColor,
         ),
       ),
     );
