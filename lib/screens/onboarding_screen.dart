@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/app_color.dart';
 import 'package:islami_app/models/onboarding_model.dart';
 import 'package:islami_app/home/home_screen.dart';
 import 'package:islami_app/widgets/boarding_item.dart';
@@ -103,7 +104,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       controller: boardingController,
                       count:  boardingList.length,
                       effect: const ExpandingDotsEffect(
-                        activeDotColor: Color(0xffFFD482),
+                        activeDotColor: AppColor.primaryColor,
                         dotColor: Color(0xff707070),
                         dotHeight: 7,
                         dotWidth: 7,
