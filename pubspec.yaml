@@ -81,7 +81,8 @@ flutter:
     - family: Janna LT
       fonts:
         - asset: assets/fonts/Janna LT.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+        - asset: assets/fonts/Janna-LT-Bold.ttf
+          weight: 700
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

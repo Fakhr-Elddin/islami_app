@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/app_color.dart';
+import 'package:islami_app/home/tabs/hadeth/hadeth_tab.dart';
+import 'package:islami_app/home/tabs/quran/quran_tab.dart';
+import 'package:islami_app/home/tabs/radio/radio_tab.dart';
+import 'package:islami_app/home/tabs/sebha/sebha_tab.dart';
+import 'package:islami_app/home/tabs/time/time_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,6 +23,14 @@ class _HomeScreenState extends State<HomeScreen> {
     "assets/images/sebha_background.png",
     "assets/images/radio_background.png",
     "assets/images/time_background.png",
+  ];
+
+  final List<Widget> tabs = const [
+    QuranTab(),
+    HadethTab(),
+    SebhaTab(),
+    RadioTab(),
+    TimeTab(),
   ];
 
   @override
@@ -73,6 +86,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
+          ),
+          body: SafeArea(
+              child: tabs[selectedIndex],
           ),
         ),
       ],
