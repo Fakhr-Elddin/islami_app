@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/app_color.dart';
+import 'package:islami_app/home/tabs/quran/sura_details_screen.dart';
 import 'package:islami_app/home/tabs/quran/widgets/most_recently_item.dart';
 import 'package:islami_app/home/tabs/quran/widgets/suras_list_item.dart';
+import 'package:islami_app/models/sura_details_model.dart';
 
 class QuranTab extends StatelessWidget {
   const QuranTab({super.key});
@@ -354,6 +356,8 @@ class QuranTab extends StatelessWidget {
     '6'
   ];
 
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -431,7 +435,6 @@ class QuranTab extends StatelessWidget {
           SizedBox(
             height: 150,
             child: ListView.separated(
-
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
               itemBuilder: (context, index) => const MostRecentlyItem(),
@@ -451,14 +454,25 @@ class QuranTab extends StatelessWidget {
           ),
           Expanded(
             child: ListView.separated(
-              itemBuilder: (context, index) {
-                return SurasListItem(
-                  enSuraName: englishQuranSurahs[index],
-                  arSuraName: arabicQuranSuras[index],
-                  ayaNumber: ayaNumber[index],
-                  suraNumber: index + 1,
-                );
-              },
+              itemBuilder: (context, index) => InkWell(
+                onTap: () {
+                  Navigator.of(context).pushNamed(
+                    SuraDetailsScreen.routeName,
+                    arguments: SuraDetailsModel(
+                      enSuraName: englishQuranSurahs[index],
+                      arSuraName: arabicQuranSuras[index],
+                      suraNumber: index+1,
+                    ),
+                  );
+                },
+                child: SurasListItem(
+                    enSuraName: englishQuranSurahs[index],
+                    arSuraName: arabicQuranSuras[index],
+                    ayaNumber: ayaNumber[index],
+                    suraNumber: index + 1,
+                ),
+              )
+              ,
               separatorBuilder: (context, index) => const Divider(
                 color: AppColor.whiteColor,
                 indent: 40,
