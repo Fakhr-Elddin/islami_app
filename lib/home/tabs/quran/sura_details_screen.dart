@@ -70,14 +70,17 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                             height: 92,
                             'assets/images/img_left_corner.png',
                           ),
-                          Text(
-                            suraDetailsModel.arSuraName,
-                              style: const TextStyle(
-                                color: AppColor.primaryColor,
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
+                          Expanded(
+                            child: Text(
+                              suraDetailsModel.arSuraName,
+                              textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                  color: AppColor.primaryColor,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
+                          ),
                           Image.asset(
                             width: 93,
                             height: 92,
