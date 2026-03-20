@@ -49,7 +49,7 @@ class _HadethTabState extends State<HadethTab> {
           options: CarouselOptions(
             scrollDirection: Axis.horizontal,
             height: 600,
-            viewportFraction: 0.8,
+            viewportFraction: 0.75,
             enlargeCenterPage: true,
           ),
           itemCount: hadethList.length,

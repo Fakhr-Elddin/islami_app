@@ -31,8 +31,8 @@ class HadethCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Image.asset(
-                        width: 92,
-                        height: 100,
+                        // width: 92,
+                        // height: 100,
                         fit: BoxFit.contain,
                         'assets/images/hadeth_left_corner.png',
                       ),
@@ -48,8 +48,8 @@ class HadethCard extends StatelessWidget {
                         ),
                       ),
                       Image.asset(
-                        width: 92,
-                        height: 100,
+                        // width: 92,
+                        // height: 100,
                         fit: BoxFit.contain,
                         'assets/images/hadeth_right_corner.png',
                       ),
