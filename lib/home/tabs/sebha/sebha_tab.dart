@@ -1,12 +1,97 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/app_color.dart';
 
-class SebhaTab extends StatelessWidget {
+class SebhaTab extends StatefulWidget {
   const SebhaTab({super.key});
 
   @override
+  State<SebhaTab> createState() => _SebhaTabState();
+}
+
+class _SebhaTabState extends State<SebhaTab> {
+
+  int counter = 0;
+  String sebha = 'سبحان الله';
+  double angel = 0;
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue,
+    return Column(
+      children: [
+        Center(child: Image.asset("assets/images/islami.png")),
+        const SizedBox(
+          height: 16,
+        ),
+        const Text(
+          "سَبِّحِ اسْمَ رَبِّكَ الأعلى",
+          textDirection: TextDirection.rtl,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: AppColor.whiteColor,
+            fontSize: 36,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(
+          height: 16,
+        ),
+        InkWell(
+          onTap: (){
+            counter++;
+            angel += 0.1;
+            if(counter == 33){
+              sebha = 'الحمد الله';
+          }
+            if(counter == 66){
+              sebha = 'لا إله إلا الله';
+            }
+            if(counter == 66){
+              sebha = 'الله اكبر';
+          }
+            if(counter == 99){
+              counter = 0;
+              angel = 0;
+              sebha = 'سبحان الله';
+            }
+            setState(() {});
+          },
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              Transform.rotate(
+                angle: angel,
+                child: Image.asset(
+                  'assets/images/sebha.png',
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 80.0),
+                child: Column(
+                  children: [
+                    Text(
+                      sebha,
+                      style: const TextStyle(
+                        color: AppColor.whiteColor,
+                        fontSize: 36,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      '$counter',
+                      style: const TextStyle(
+                        color: AppColor.whiteColor,
+                        fontSize: 36,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
