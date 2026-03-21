@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/app_color.dart';
+import 'package:islami_app/utils/app_color.dart';
 import 'package:islami_app/home/tabs/quran/sura_details_screen.dart';
 import 'package:islami_app/home/tabs/quran/widgets/most_recently_item.dart';
 import 'package:islami_app/home/tabs/quran/widgets/suras_list_item.dart';
 import 'package:islami_app/models/sura_details_model.dart';
+import 'package:islami_app/utils/app_styles.dart';
 
 class QuranTab extends StatelessWidget {
   const QuranTab({super.key});
@@ -378,13 +379,8 @@ class QuranTab extends StatelessWidget {
             height: 20,
           ),
           TextFormField(
-            cursorColor: AppColor.hintColor,
-            style: const TextStyle(
-              fontSize: 16,
-              fontFamily: 'Janna LT',
-              fontWeight: FontWeight.bold,
-              color: AppColor.hintColor,
-            ),
+            cursorColor: AppColor.offWhiteColor,
+            style: AppStyles.bold16OffWhite,
             decoration: InputDecoration(
               prefixIcon: const ImageIcon(
                 color: AppColor.primaryColor,
@@ -393,12 +389,7 @@ class QuranTab extends StatelessWidget {
                 ),
               ),
               labelText: 'Sura Name',
-              labelStyle: const TextStyle(
-                fontSize: 16,
-                fontFamily: 'Janna LT',
-                fontWeight: FontWeight.bold,
-                color: AppColor.hintColor,
-              ),
+              labelStyle: AppStyles.bold16OffWhite,
               border: OutlineInputBorder(
                 borderSide: const BorderSide(
                   color: AppColor.primaryColor,
@@ -422,12 +413,9 @@ class QuranTab extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-           const Text(
+           Text(
               'Most Recently',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
+              style: AppStyles.bold16OffWhite,
             ),
           const SizedBox(
             height: 10,
@@ -442,14 +430,11 @@ class QuranTab extends StatelessWidget {
               itemCount: 5,
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 10.0),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10.0),
             child: Text(
                 'Suras List',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: AppStyles.bold16OffWhite,
               ),
           ),
           Expanded(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/app_color.dart';
+import 'package:islami_app/utils/app_styles.dart';
 
 class SurasListItem extends StatelessWidget {
   const SurasListItem({
@@ -30,11 +30,7 @@ class SurasListItem extends StatelessWidget {
               ),
               Text(
                 '$suraNumber',
-                style: const TextStyle(
-                  color: AppColor.whiteColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
+                style: AppStyles.bold14White,
               ),
             ],
           ),
@@ -46,30 +42,18 @@ class SurasListItem extends StatelessWidget {
             children: [
               Text(
                 enSuraName,
-                style: const TextStyle(
-                  color: AppColor.whiteColor,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: AppStyles.bold20White,
               ),
               Text(
                 '$ayaNumber Verses',
-                style: const TextStyle(
-                  color: AppColor.whiteColor,
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: AppStyles.bold14White,
               ),
             ],
           ),
           const Spacer(),
           Text(
             arSuraName,
-            style: const TextStyle(
-              color: AppColor.whiteColor,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
+            style: AppStyles.bold20White,
           ),
         ],
       ),

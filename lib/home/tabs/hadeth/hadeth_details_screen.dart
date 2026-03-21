@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/app_color.dart';
+import 'package:islami_app/utils/app_color.dart';
 import 'package:islami_app/models/hadeth_model.dart';
+import 'package:islami_app/utils/app_styles.dart';
 
 class HadethDetailsScreen extends StatelessWidget {
   const HadethDetailsScreen({super.key});
@@ -11,17 +12,7 @@ class HadethDetailsScreen extends StatelessWidget {
     var hadethDetail = ModalRoute.of(context)?.settings.arguments as HadethModel;
     return Scaffold(
       backgroundColor: AppColor.blackColor,
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          hadethDetail.title,
-          style: const TextStyle(
-            color: AppColor.primaryColor,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
+      appBar: AppBar(),
       body: Column(
         children: [
           Expanded(
@@ -41,11 +32,7 @@ class HadethDetailsScreen extends StatelessWidget {
                         child: Text(
                           hadethDetail.title,
                           textAlign: TextAlign.center,
-                          style: const TextStyle(
-                            color: AppColor.primaryColor,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: AppStyles.bold24Primary,
                         ),
                       ),
                       Image.asset(
@@ -67,11 +54,7 @@ class HadethDetailsScreen extends StatelessWidget {
                       hadethDetail.content[index],
                       textAlign: TextAlign.center,
                       textDirection: TextDirection.rtl,
-                      style: const TextStyle(
-                        color: AppColor.primaryColor,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: AppStyles.bold20Primary,
                     ),
                   ),
                     itemCount: hadethDetail.content.length,

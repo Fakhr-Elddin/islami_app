@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:islami_app/app_color.dart';
+import 'package:islami_app/utils/app_color.dart';
 import 'package:islami_app/models/sura_details_model.dart';
+import 'package:islami_app/utils/app_styles.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
   const SuraDetailsScreen({super.key});
@@ -31,11 +32,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
         centerTitle: true,
         title: Text(
           suraDetailsModel.enSuraName,
-          style: const TextStyle(
-            color: AppColor.primaryColor,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
+          style: AppStyles.bold20Primary,
         ),
       ),
       body: Padding(
@@ -74,11 +71,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                             child: Text(
                               suraDetailsModel.arSuraName,
                               textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                  color: AppColor.primaryColor,
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                                style: AppStyles.bold24Primary,
                               ),
                           ),
                           Image.asset(
@@ -117,11 +110,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                                 "${snapshot.data![index]}[${index+1}]",
                                 textAlign: TextAlign.center,
                                 textDirection: TextDirection.rtl,
-                                style: const TextStyle(
-                                  color: AppColor.blackColor,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                                style: AppStyles.bold20Black,
                               ),
                             )
                                 : Container(
@@ -138,11 +127,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                                 "${snapshot.data![index]}[${index+1}]",
                                 textAlign: TextAlign.center,
                                 textDirection: TextDirection.rtl,
-                                style: const TextStyle(
-                                color: AppColor.primaryColor,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
+                                style: AppStyles.bold20Primary,
                               ),
                             ),
                           ),

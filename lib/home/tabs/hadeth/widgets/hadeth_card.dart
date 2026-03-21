@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/app_color.dart';
+import 'package:islami_app/utils/app_color.dart';
 import 'package:islami_app/models/hadeth_model.dart';
+import 'package:islami_app/utils/app_styles.dart';
 
 class HadethCard extends StatelessWidget {
   const HadethCard({super.key, required this.hadethModel});
@@ -40,11 +41,7 @@ class HadethCard extends StatelessWidget {
                         child: Text(
                           hadethModel.title,
                           textAlign: TextAlign.center,
-                          style: const TextStyle(
-                            color: AppColor.blackColor,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: AppStyles.bold24Black,
                         ),
                       ),
                       Image.asset(
@@ -63,11 +60,7 @@ class HadethCard extends StatelessWidget {
                       hadethModel.content.join(''),
                       textDirection: TextDirection.rtl,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        color: AppColor.blackColor,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: AppStyles.bold16Black,
                     ),
                   ),
                 ),

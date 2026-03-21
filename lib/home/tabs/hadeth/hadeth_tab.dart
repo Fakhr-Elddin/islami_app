@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islami_app/app_color.dart';
+import 'package:islami_app/utils/app_color.dart';
 import 'package:islami_app/home/tabs/hadeth/hadeth_details_screen.dart';
 import 'package:islami_app/home/tabs/hadeth/widgets/hadeth_card.dart';
 import 'package:islami_app/models/hadeth_model.dart';
@@ -33,7 +33,6 @@ class _HadethTabState extends State<HadethTab> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     if (hadethList.isEmpty) {
       loadHadethFile();

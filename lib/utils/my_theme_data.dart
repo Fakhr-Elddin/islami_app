@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/app_color.dart';
+import 'package:islami_app/utils/app_color.dart';
 
 class MyThemeData {
   static ThemeData darkTheme = ThemeData.dark().copyWith(

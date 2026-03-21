@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/app_color.dart';
+import 'package:islami_app/utils/app_styles.dart';
 
 class SebhaTab extends StatefulWidget {
   const SebhaTab({super.key});
@@ -22,15 +22,10 @@ class _SebhaTabState extends State<SebhaTab> {
         const SizedBox(
           height: 16,
         ),
-        const Text(
+        Text(
           "سَبِّحِ اسْمَ رَبِّكَ الأعلى",
-          textDirection: TextDirection.rtl,
           textAlign: TextAlign.center,
-          style: TextStyle(
-            color: AppColor.whiteColor,
-            fontSize: 36,
-            fontWeight: FontWeight.bold,
-          ),
+          style: AppStyles.bold36White,
         ),
         const SizedBox(
           height: 16,
@@ -70,19 +65,11 @@ class _SebhaTabState extends State<SebhaTab> {
                   children: [
                     Text(
                       sebha,
-                      style: const TextStyle(
-                        color: AppColor.whiteColor,
-                        fontSize: 36,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: AppStyles.bold36White,
                     ),
                     Text(
                       '$counter',
-                      style: const TextStyle(
-                        color: AppColor.whiteColor,
-                        fontSize: 36,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: AppStyles.bold36White,
                     ),
                   ],
                 ),

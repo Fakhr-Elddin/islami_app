@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/app_color.dart';
+import 'package:islami_app/utils/app_color.dart';
+import 'package:islami_app/utils/app_styles.dart';
 
 class MostRecentlyItem extends StatelessWidget {
   const MostRecentlyItem({
@@ -24,35 +25,23 @@ class MostRecentlyItem extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 'Al-Anbiya',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: AppColor.blackColor,
-                ),
+                style: AppStyles.bold24Black,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.0,),
+                padding: const EdgeInsets.symmetric(vertical: 8.0,),
                 child: Text(
                   'الأنبياء',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: AppColor.blackColor,
-                  ),
+                  style: AppStyles.bold24Black,
                 ),
               ),
               Text(
                 '112 Verses',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: AppColor.blackColor,
-                ),
+                style: AppStyles.bold14Black,
               ),
             ],
           ),
