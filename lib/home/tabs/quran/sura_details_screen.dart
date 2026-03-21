@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:islami_app/home/tabs/quran/widgets/selected_aya.dart';
+import 'package:islami_app/home/tabs/quran/widgets/unselected_aya.dart';
 import 'package:islami_app/utils/app_color.dart';
 import 'package:islami_app/models/sura_details_model.dart';
 import 'package:islami_app/utils/app_styles.dart';
@@ -95,40 +97,11 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                                 });
                               }
                             },
-                            child: selectedIndex == index ? Container(
-                              padding: const EdgeInsets.symmetric(vertical: 16),
-                              margin: const EdgeInsets.only(bottom: 8),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                color: AppColor.primaryColor,
-                                border: BoxBorder.all(
-                                  color: AppColor.primaryColor,
-                                  width: 2,
-                                ),
-                              ),
-                              child: Text(
-                                "${snapshot.data![index]}[${index+1}]",
-                                textAlign: TextAlign.center,
-                                textDirection: TextDirection.rtl,
-                                style: AppStyles.bold20Black,
-                              ),
+                            child: selectedIndex == index ? SelectedAya(
+                              aya: "${snapshot.data![index]}[${index+1}]",
                             )
-                                : Container(
-                              padding: const EdgeInsets.symmetric(vertical: 16),
-                              margin: const EdgeInsets.only(bottom: 8),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                border: BoxBorder.all(
-                                  color: AppColor.primaryColor,
-                                  width: 2,
-                                ),
-                              ),
-                              child: Text(
-                                "${snapshot.data![index]}[${index+1}]",
-                                textAlign: TextAlign.center,
-                                textDirection: TextDirection.rtl,
-                                style: AppStyles.bold20Primary,
-                              ),
+                                : UnselectedAya(
+                              aya: "${snapshot.data![index]}[${index+1}]",
                             ),
                           ),
                         ),

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/utils/app_color.dart';
-import 'package:islami_app/home/tabs/quran/sura_details_screen.dart';
-import 'package:islami_app/home/tabs/quran/widgets/most_recently_item.dart';
-import 'package:islami_app/home/tabs/quran/widgets/suras_list_item.dart';
-import 'package:islami_app/models/sura_details_model.dart';
+import 'package:islami_app/home/tabs/quran/widgets/most_recently_list_view.dart';
+import 'package:islami_app/home/tabs/quran/widgets/search_item.dart';
+import 'package:islami_app/home/tabs/quran/widgets/suars_list_list_view.dart';
 import 'package:islami_app/utils/app_styles.dart';
 
 class QuranTab extends StatelessWidget {
@@ -378,94 +376,33 @@ class QuranTab extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          TextFormField(
-            cursorColor: AppColor.offWhiteColor,
-            style: AppStyles.bold16OffWhite,
-            decoration: InputDecoration(
-              prefixIcon: const ImageIcon(
-                color: AppColor.primaryColor,
-                AssetImage(
-                  'assets/images/ic_search.png'
-                ),
-              ),
-              labelText: 'Sura Name',
-              labelStyle: AppStyles.bold16OffWhite,
-              border: OutlineInputBorder(
-                borderSide: const BorderSide(
-                  color: AppColor.primaryColor,
-                ),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderSide: const BorderSide(
-                  color: AppColor.primaryColor,
-                ),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderSide: const BorderSide(
-                  color: AppColor.primaryColor,
-                ),
-                borderRadius: BorderRadius.circular(10),
-              ),
-            ),
-          ),
+          const SearchItem(),
           const SizedBox(
             height: 20,
           ),
-           Text(
+           const Text(
               'Most Recently',
               style: AppStyles.bold16OffWhite,
             ),
           const SizedBox(
             height: 10,
           ),
-          SizedBox(
+          const SizedBox(
             height: 150,
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              physics: const BouncingScrollPhysics(),
-              itemBuilder: (context, index) => const MostRecentlyItem(),
-              separatorBuilder: (context, index) => const SizedBox(width: 10,),
-              itemCount: 5,
-            ),
+            child: MostRecentlyListView(),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10.0),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 10.0),
             child: Text(
                 'Suras List',
                 style: AppStyles.bold16OffWhite,
               ),
           ),
           Expanded(
-            child: ListView.separated(
-              itemBuilder: (context, index) => InkWell(
-                onTap: () {
-                  Navigator.of(context).pushNamed(
-                    SuraDetailsScreen.routeName,
-                    arguments: SuraDetailsModel(
-                      enSuraName: englishQuranSurahs[index],
-                      arSuraName: arabicQuranSuras[index],
-                      suraNumber: index+1,
-                    ),
-                  );
-                },
-                child: SurasListItem(
-                    enSuraName: englishQuranSurahs[index],
-                    arSuraName: arabicQuranSuras[index],
-                    ayaNumber: ayaNumber[index],
-                    suraNumber: index + 1,
-                ),
-              )
-              ,
-              separatorBuilder: (context, index) => const Divider(
-                color: AppColor.whiteColor,
-                indent: 40,
-                endIndent: 40,
-                height: 20,
-                thickness: 2,
-              ),
-              itemCount: arabicQuranSuras.length,
+            child: SurasListListView(
+              englishQuranSurahs: englishQuranSurahs,
+              arabicQuranSuras: arabicQuranSuras,
+              ayaNumber: ayaNumber,
             ),
           ),
         ],

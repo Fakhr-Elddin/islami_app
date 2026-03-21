@@ -41,13 +41,14 @@ class _HadethTabState extends State<HadethTab> {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
     return Column(
       children: [
         Center(child: Image.asset("assets/images/islami.png")),
         CarouselSlider.builder(
           options: CarouselOptions(
             scrollDirection: Axis.horizontal,
-            height: 600,
+            height: height * 0.66,
             viewportFraction: 0.75,
             enlargeCenterPage: true,
           ),
