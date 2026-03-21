@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/models/sura_details_model.dart';
 import 'package:islami_app/utils/app_styles.dart';
 
 class SurasListItem extends StatelessWidget {
   const SurasListItem({
     super.key,
-    required this.suraNumber,
-    required this.enSuraName,
-    required this.arSuraName,
-    required this.ayaNumber,
+    required this.suraDetailsModel,
   });
-  final int suraNumber;
-  final String enSuraName;
-  final String arSuraName;
-  final String ayaNumber;
+  final SuraDetailsModel suraDetailsModel;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +24,7 @@ class SurasListItem extends StatelessWidget {
                 'assets/images/sura_number.png',
               ),
               Text(
-                '$suraNumber',
+                '${suraDetailsModel.suraNumber}',
                 style: AppStyles.bold14White,
               ),
             ],
@@ -41,18 +36,18 @@ class SurasListItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                enSuraName,
+                suraDetailsModel.enSuraName,
                 style: AppStyles.bold20White,
               ),
               Text(
-                '$ayaNumber Verses',
+                '${suraDetailsModel.ayaNumber} Verses',
                 style: AppStyles.bold14White,
               ),
             ],
           ),
           const Spacer(),
           Text(
-            arSuraName,
+            suraDetailsModel.arSuraName,
             style: AppStyles.bold20White,
           ),
         ],

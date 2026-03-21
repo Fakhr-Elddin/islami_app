@@ -5,16 +5,7 @@ import 'package:islami_app/models/sura_details_model.dart';
 import 'package:islami_app/utils/app_color.dart';
 
 class SurasListListView extends StatelessWidget {
-  const SurasListListView({
-    super.key,
-    required this.englishQuranSurahs,
-    required this.arabicQuranSuras,
-    required this.ayaNumber,
-  });
-
-  final List<String> englishQuranSurahs;
-  final List<String> arabicQuranSuras;
-  final List<String> ayaNumber;
+  const SurasListListView({super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -24,17 +15,15 @@ class SurasListListView extends StatelessWidget {
           Navigator.of(context).pushNamed(
             SuraDetailsScreen.routeName,
             arguments: SuraDetailsModel(
-              enSuraName: englishQuranSurahs[index],
-              arSuraName: arabicQuranSuras[index],
+              enSuraName: SuraDetailsModel.englishQuranSurahs[index],
+              arSuraName: SuraDetailsModel.arabicQuranSuras[index],
+              ayaNumber: SuraDetailsModel.ayasNumber[index],
               suraNumber: index+1,
             ),
           );
         },
         child: SurasListItem(
-          enSuraName: englishQuranSurahs[index],
-          arSuraName: arabicQuranSuras[index],
-          ayaNumber: ayaNumber[index],
-          suraNumber: index + 1,
+          suraDetailsModel: SuraDetailsModel.getSuraModel(index: index),
         ),
       )
       ,
@@ -45,7 +34,7 @@ class SurasListListView extends StatelessWidget {
         height: 20,
         thickness: 2,
       ),
-      itemCount: arabicQuranSuras.length,
+      itemCount: SuraDetailsModel.arabicQuranSuras.length,
     );
   }
 }

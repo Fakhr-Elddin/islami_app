@@ -60,20 +60,16 @@ class _HadethTabState extends State<HadethTab> {
                   ),
                 )
               : InkWell(
-            onTap: (){
-              Navigator.of(context).pushNamed(
-                HadethDetailsScreen.routeName,
-                arguments: hadethList[index],
-              );
-            },
-                child: HadethCard(
-                            hadethModel: hadethList[index],
-                          ),
-              ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(
+                      HadethDetailsScreen.routeName,
+                      arguments: hadethList[index],
+                    );
+                  },
+                  child: HadethCard(hadethModel: hadethList[index]),
+                ),
         ),
       ],
     );
   }
 }
-
-
