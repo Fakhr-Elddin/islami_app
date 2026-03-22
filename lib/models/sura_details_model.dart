@@ -19,7 +19,15 @@ class SuraDetailsModel {
       suraNumber: index + 1,
     );
   }
-
+  static SuraDetailsModel getSearchSuraModel({required int index}) {
+    return SuraDetailsModel(
+      enSuraName: searchResultList[index],
+      arSuraName: searchResultList[index],
+      ayaNumber: searchResultList[index],
+      suraNumber: index + 1,
+    );
+  }
+  static List<String> searchResultList = [];
   static const List<String> arabicQuranSuras = [
     "الفاتحه",
     "البقرة",
