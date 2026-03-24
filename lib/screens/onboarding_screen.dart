@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/cache/cache_helper.dart';
 import 'package:islami_app/utils/app_color.dart';
 import 'package:islami_app/models/onboarding_model.dart';
 import 'package:islami_app/home/home_screen.dart';
@@ -123,6 +124,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           curve: Curves.fastEaseInToSlowEaseOut,
                         );
                       } else{
+                        CacheHelper.saveEligibility();
                         Navigator.pushReplacementNamed(context, HomeScreen.routeName,);
                       }
                     },
