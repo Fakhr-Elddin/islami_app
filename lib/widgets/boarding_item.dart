@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/models/onboarding_model.dart';
+import 'package:islami_app/utils/app_styles.dart';
 
 class BoardingItem extends StatelessWidget {
   const BoardingItem({
@@ -21,22 +22,12 @@ class BoardingItem extends StatelessWidget {
         ),
         Text(
           boardingModel.title,
-          style: const TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'Janna LT',
-            color: Color(0xffE2BE7F),
-          ),
+          style: AppStyles.bold24Primary,
         ),
         Text(
           boardingModel.subTitle ?? '',
           textAlign: TextAlign.center,
-          style: const TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'Janna LT',
-            color: Color(0xffE2BE7F),
-          ),
+          style: AppStyles.bold20Primary,
         ),
       ],
     );

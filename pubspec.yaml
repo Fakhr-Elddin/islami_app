@@ -36,6 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_native_splash: ^2.4.7
   smooth_page_indicator: ^2.0.1
+  carousel_slider: ^5.1.2
+  shared_preferences: ^2.5.4
 
 
 
@@ -64,7 +66,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
-  #   - images/a_dot_ham.jpeg
+    - assets/files/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
@@ -81,7 +83,8 @@ flutter:
     - family: Janna LT
       fonts:
         - asset: assets/fonts/Janna LT.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+        - asset: assets/fonts/Janna-LT-Bold.ttf
+          weight: 700
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
